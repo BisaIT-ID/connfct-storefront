@@ -1,5 +1,6 @@
 import Footer from "components/layout/footer";
 import Features from "components/modules/home/features";
+import GetStarted from "components/modules/home/get-started";
 import HowItWorks from "components/modules/home/how-it-works";
 import WhyConnfct from "components/modules/home/why-connfct";
 import { Send, Zap } from "lucide-react";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <HowItWorks />
       <WhyConnfct />
       <Features />
+      <GetStarted />
       <Footer />
     </>
   );
