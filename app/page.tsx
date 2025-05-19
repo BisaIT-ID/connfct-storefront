@@ -1,4 +1,5 @@
 import Footer from "components/layout/footer";
+import HowItWorks from "components/modules/home/how-it-works";
 import { Send, Zap } from "lucide-react";
 
 export const runtime = "edge";
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <HowItWorks />
       <Footer />
     </>
   );
