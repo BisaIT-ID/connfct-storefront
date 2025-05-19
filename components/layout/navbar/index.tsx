@@ -1,61 +1,59 @@
-import CartModal from 'components/cart/modal';
-import LogoSquare from 'components/logo-square';
-import { getMenu } from 'lib/shopify';
-import { Menu } from 'lib/shopify/types';
-import Link from 'next/link';
-import { Suspense } from 'react';
-import MobileMenu from './mobile-menu';
-import Search, { SearchSkeleton } from './search';
+"use client";
+import clsx from "clsx";
+import { Send } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const { SITE_NAME } = process.env;
-
-export async function Navbar() {
-  const menu = await getMenu('next-js-frontend-header-menu');
+export function Navbar() {
+  // const menu = await getMenu("next-js-frontend-header-menu");
+  const pathname = usePathname();
+  const menu = [
+    {
+      title: "Home",
+      url: "/",
+    },
+    {
+      title: "Collections",
+      url: "/collections",
+    },
+    {
+      title: "Connect",
+      url: "/connect",
+    },
+  ];
 
   return (
-    <nav className="relative flex items-center justify-between p-4 lg:px-6">
-      <div className="block flex-none md:hidden">
-        <Suspense fallback={null}>
-          <MobileMenu menu={menu} />
-        </Suspense>
-      </div>
-      <div className="flex w-full items-center">
-        <div className="flex w-full md:w-1/3">
+    <div className="w-full h-16 absolute top-0 left-[50%] -translate-x-[50%] z-50 flex justify-between items-center px-[60px] my-8 max-w-[1440px]">
+      <Link href="/">
+        <img src="/images/logo.png" className="h-8" />
+      </Link>
+
+      <div className="p-2 rounded-[100px] outline outline-offset-[-1px] outline-neutral-200 backdrop-blur-xl flex justify-start items-center gap-3">
+        {menu.map((item, index) => (
           <Link
-            href="/"
-            prefetch={true}
-            className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
+            key={index}
+            href={item.url}
+            className={clsx(
+              "px-5 py-3 rounded-[32px] text-base font-medium leading-snug",
+              pathname === item.url ? "bg-white text-black" : "text-white"
+            )}
           >
-            <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-              {SITE_NAME}
-            </div>
+            {item.title}
           </Link>
-          {menu.length ? (
-            <ul className="hidden gap-6 text-sm md:flex md:items-center">
-              {menu.map((item: Menu) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.path}
-                    prefetch={true}
-                    className="text-neutral-500 underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : null}
-        </div>
-        <div className="hidden justify-center md:flex md:w-1/3">
-          <Suspense fallback={<SearchSkeleton />}>
-            <Search />
-          </Suspense>
-        </div>
-        <div className="flex justify-end md:w-1/3">
-          <CartModal />
-        </div>
+        ))}
+        <Link
+          href="/shop"
+          className="pl-4 pr-2 py-2 bg-black rounded-[100px] shadow-[inset_0px_-4px_1px_0px_rgba(13,13,13,0.22)] outline-[0.50px] outline-offset-[-0.50px] outline-zinc-800 flex justify-center items-center gap-4"
+        >
+          <span className="justify-start text-white text-base font-medium leading-snug">
+            Get Started
+          </span>
+          <div className="bg-white rounded-full p-2">
+            <Send className="w-3 h-3 text-black" />
+          </div>
+        </Link>
       </div>
-    </nav>
+    </div>
   );
 }
+

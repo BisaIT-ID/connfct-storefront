@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -10,7 +14,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -21,8 +25,28 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    // "paths": {
+    //   "@cloudflare/next-on-pages/next-dev": [
+    //     "node_modules/@cloudflare/next-on-pages/dist/next-dev/index.d.ts"
+    //   ],
+    //   "@cloudflare/next-on-pages": [
+    //     "node_modules/@cloudflare/next-on-pages/dist/api/index.d.ts"
+    //   ],
+    // }
+    "paths": {
+      "@cloudflare/next-on-pages/*": [
+        "node_modules/@cloudflare/next-on-pages/dist/api/*"
+      ]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }
