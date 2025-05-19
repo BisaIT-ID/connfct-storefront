@@ -1,5 +1,6 @@
 import Footer from "components/layout/footer";
 import HowItWorks from "components/modules/home/how-it-works";
+import WhyConnfct from "components/modules/home/why-connfct";
 import { Send, Zap } from "lucide-react";
 
 export const runtime = "edge";
@@ -16,6 +17,7 @@ export default function HomePage() {
     <>
       <Hero />
       <HowItWorks />
+      <WhyConnfct />
       <Footer />
     </>
   );
