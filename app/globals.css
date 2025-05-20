@@ -77,7 +77,7 @@
   --color-info-100: rgb(237 247 254);
   --color-info-50: rgb(245 251 254);
 
-  --font-body: "Poppins", sans-serif;
+  --font-community-pro: var(--font-community-pro);
 
   --text-display-1-light: 72px;
   --text-display-1-light--line-height: 1.2000000476837158;
