@@ -1,85 +1,94 @@
+import { Send } from "lucide-react";
 import Link from "next/link";
-
-import { getRequestContext } from "@cloudflare/next-on-pages";
-import FooterMenu from "components/layout/footer-menu";
-import { getMenu } from "lib/shopify";
-import { Suspense } from "react";
 
 export const runtime = "edge";
 
 export default async function Footer() {
-  const context = getRequestContext();
-  const { COMPANY_NAME, SITE_NAME } = (context?.env ?? process.env) as {
-    COMPANY_NAME?: string;
-    SITE_NAME?: string;
-  };
-
-  const currentYear = new Date().getFullYear();
-  const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : "");
-  const skeleton =
-    "w-full h-6 animate-pulse rounded-sm bg-neutral-200 dark:bg-neutral-700";
-  const menu = await getMenu("next-js-frontend-footer-menu");
-  const copyrightName = COMPANY_NAME || SITE_NAME || "";
+  const links = [
+    {
+      label: "LINKS",
+      links: ["Home", "How it works", "Why Connfct", "Collections"],
+    },
+    {
+      label: "PRODUCT",
+      links: [
+        "Connfct Card",
+        "Connfct  Ring",
+        "Connfct Desk Star",
+        "Connfct Keychain",
+        "Connfct-nano",
+      ],
+    },
+  ];
 
   return (
-    <footer className="text-sm text-neutral-500 dark:text-neutral-400">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
+    <footer className="bg-primary-850 rounded-[32px] w-full p-[60px] flex flex-col gap-20 max-w-[1440px] mx-auto text-white">
+      <div className="flex justify-between">
+        <div className="flex flex-col gap-4">
+          <p className="max-w-[309px]">
+            Höfe am Brühl, Leipzig Tower Brühl 1, 04109 Leipzig Germany
+          </p>
+          <div className="flex items-center gap-3 p-1 pr-3 border border-white rounded-full w-fit">
+            <img
+              src="/home/footer/mail.png"
+              className="size-8 rounded-full"
+              alt=""
+            />
+            https://hello@connfct.com
+          </div>
+        </div>
+
+        <div className="flex gap-5">
+          {links.map((link) => (
+            <div className="flex flex-col font-medium gap-4 w-[200px]">
+              <span className="text-lg text-text-tertiary">#{link.label}</span>
+              {link.links.map((link) => (
+                <a key={link}>{link}</a>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <span className="max-w-[309px] text-2xl font-bold">
+            Just tap to get instantly connected and stay always secure
+          </span>
+          <div className="py-2 px-3 bg-white rounded-[100px] w-fit shadow-[inset_0px_-4px_1px_0px_rgba(13,13,13,0.22)] outline-[0.50px] outline-offset-[-0.50px] outline-zinc-800 inline-flex justify-center items-center gap-4">
+            <span className="justify-start text-neutral-900 text-base font-medium leading-snug">
+              Get Started
+            </span>
+            <div className="bg-black rounded-full p-2">
+              <Send className="w-3 h-3" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-between items-end">
+        <div className="flex flex-col gap-3">
+          <span className="text-lg">FOLLOW US</span>
+          <div className="flex items-center gap-3 mb-1">
+            <a href="#">
+              <img src="/home/footer/ig.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="/home/footer/fb.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="/home/footer/li.png" alt="" />
+            </a>
+          </div>
+          <span className="text-xs">© 2025 Connfct. All rights reserved</span>
+        </div>
         <div>
           <Link
             className="flex items-center gap-2 text-black md:pt-1 dark:text-white"
             href="/"
           >
             <img src="/images/logo.png" />
-            <span className="uppercase">{SITE_NAME}</span>
           </Link>
-        </div>
-        <Suspense
-          fallback={
-            <div className="flex h-[188px] w-[200px] flex-col gap-2">
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-            </div>
-          }
-        >
-          <FooterMenu menu={menu} />
-        </Suspense>
-        <div className="md:ml-auto">
-          <a
-            className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-neutral-200 bg-white text-xs text-black dark:border-neutral-700 dark:bg-black dark:text-white"
-            aria-label="Deploy on Vercel"
-            href="https://vercel.com/templates/next.js/nextjs-commerce"
-          >
-            <span className="px-3">▲</span>
-            <hr className="h-full border-r border-neutral-200 dark:border-neutral-700" />
-            <span className="px-3">Deploy</span>
-          </a>
-        </div>
-      </div>
-      <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
-          <p>
-            &copy; {copyrightDate} {copyrightName}
-            {copyrightName.length && !copyrightName.endsWith(".")
-              ? "."
-              : ""}{" "}
-            All rights reserved.
-          </p>
-          <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-          <p>
-            <a href="https://github.com/vercel/commerce">View the source</a>
-          </p>
-          <p className="md:ml-auto">
-            <a href="https://vercel.com" className="text-black dark:text-white">
-              Created by ▲ Vercel
-            </a>
-          </p>
         </div>
       </div>
     </footer>
   );
 }
-
