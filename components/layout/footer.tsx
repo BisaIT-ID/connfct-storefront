@@ -7,16 +7,21 @@ export default async function Footer() {
   const links = [
     {
       label: "LINKS",
-      links: ["Home", "How it works", "Why Connfct", "Collections"],
+      links: [
+        { label: "Home", href: "/#home" },
+        { label: "How it works", href: "/#how-it-works" },
+        { label: "Why Connfct", href: "/#why-connfct" },
+        { label: "Collections", href: "/#collections" },
+      ],
     },
     {
       label: "PRODUCT",
       links: [
-        "Connfct Card",
-        "Connfct  Ring",
-        "Connfct Desk Star",
-        "Connfct Keychain",
-        "Connfct-nano",
+        { label: "Connfct Card", href: "/products/connfct-card" },
+        { label: "Connfct Ring", href: "/products/connfct-ring" },
+        { label: "Connfct Desk Star", href: "/products/connfct-desk-star" },
+        { label: "Connfct Keychain", href: "/products/connfct-keychain" },
+        { label: "Connfct-nano", href: "/products/connfct-nano" },
       ],
     },
   ];
@@ -43,7 +48,9 @@ export default async function Footer() {
             <div className="flex flex-col font-medium gap-4 w-[200px]">
               <span className="text-lg text-text-tertiary">#{link.label}</span>
               {link.links.map((link) => (
-                <a key={link}>{link}</a>
+                <Link key={link.label} href={link.href}>
+                  {link.label}
+                </Link>
               ))}
             </div>
           ))}

@@ -2,7 +2,7 @@ import { Zap } from "lucide-react";
 
 const WhyConnfct = () => {
   return (
-    <div className="bg-primary-850 rounded-[32px] w-full p-[60px] flex flex-col gap-12 max-w-[1440px] mx-auto text-white">
+    <div id="why-connfct" className="bg-primary-850 rounded-[32px] w-full p-[60px] flex flex-col gap-12 max-w-[1440px] mx-auto text-white">
       <div className="flex justify-between items-end gap-8">
         <div className="flex flex-col gap-6 w-full">
           <div className="text-center text-white text-base font-medium leading-snug px-3 py-2 bg-black rounded-[100px] outline-1 outline-offset-[-1px] outline-white flex justify-center items-center gap-3 w-fit">
