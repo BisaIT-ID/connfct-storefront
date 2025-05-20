@@ -3,6 +3,7 @@ import Features from "components/modules/home/features";
 import GetStarted from "components/modules/home/get-started";
 import HowItWorks from "components/modules/home/how-it-works";
 import PremiumFeatures from "components/modules/home/premium-features";
+import Products from "components/modules/home/products";
 import WhyConnfct from "components/modules/home/why-connfct";
 import { Send, Zap } from "lucide-react";
 
@@ -23,6 +24,7 @@ export default function HomePage() {
       <WhyConnfct />
       <Features />
       <PremiumFeatures />
+      <Products />
       <GetStarted />
       <Footer />
     </>
