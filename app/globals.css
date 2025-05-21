@@ -101,202 +101,202 @@
 
   --text-display-2-regular: 54px;
   --text-display-2-regular--line-height: 1.2000000476837158;
-  --text-display-2-regular--letter-spacing: -3em;
+  --text-display-2-regular--letter-spacing: -3%;
   --text-display-2-regular--font-weight: Regular;
 
   --text-display-2-medium: 54px;
   --text-display-2-medium--line-height: 1.2000000476837158;
-  --text-display-2-medium--letter-spacing: -3em;
+  --text-display-2-medium--letter-spacing: -3%;
   --text-display-2-medium--font-weight: Medium;
 
   --text-display-2-bold: 54px;
   --text-display-2-bold--line-height: 1.2000000476837158;
-  --text-display-2-bold--letter-spacing: -3em;
+  --text-display-2-bold--letter-spacing: -3%;
   --text-display-2-bold--font-weight: Bold;
 
   --text-display-2-light: 54px;
   --text-display-2-light--line-height: 1.2000000476837158;
-  --text-display-2-light--letter-spacing: -3em;
+  --text-display-2-light--letter-spacing: -3%;
   --text-display-2-light--font-weight: Light;
 
   --text-heading-1-regular: 48px;
   --text-heading-1-regular--line-height: 1.2000000476837158;
-  --text-heading-1-regular--letter-spacing: -3em;
+  --text-heading-1-regular--letter-spacing: -3%;
   --text-heading-1-regular--font-weight: Regular;
 
   --text-heading-1-medium: 48px;
   --text-heading-1-medium--line-height: 1.2000000476837158;
-  --text-heading-1-medium--letter-spacing: -3em;
+  --text-heading-1-medium--letter-spacing: -3%;
   --text-heading-1-medium--font-weight: Medium;
 
   --text-heading-1-bold: 48px;
   --text-heading-1-bold--line-height: 1.2000000476837158;
-  --text-heading-1-bold--letter-spacing: -3em;
+  --text-heading-1-bold--letter-spacing: -3%;
   --text-heading-1-bold--font-weight: Bold;
 
   --text-heading-1-light: 48px;
   --text-heading-1-light--line-height: 1.2000000476837158;
-  --text-heading-1-light--letter-spacing: -3em;
+  --text-heading-1-light--letter-spacing: -3%;
   --text-heading-1-light--font-weight: Regular;
 
   --text-heading-2-regular: 38px;
   --text-heading-2-regular--line-height: 1.2000000476837158;
-  --text-heading-2-regular--letter-spacing: -2em;
+  --text-heading-2-regular--letter-spacing: -2%;
   --text-heading-2-regular--font-weight: Regular;
 
   --text-heading-2-medium: 38px;
   --text-heading-2-medium--line-height: 1.2000000476837158;
-  --text-heading-2-medium--letter-spacing: -2em;
+  --text-heading-2-medium--letter-spacing: -2%;
   --text-heading-2-medium--font-weight: Medium;
 
   --text-heading-2-bold: 38px;
   --text-heading-2-bold--line-height: 1.2000000476837158;
-  --text-heading-2-bold--letter-spacing: -2em;
+  --text-heading-2-bold--letter-spacing: -2%;
   --text-heading-2-bold--font-weight: Bold;
 
   --text-heading-2-light: 38px;
   --text-heading-2-light--line-height: 1.2000000476837158;
-  --text-heading-2-light--letter-spacing: -2em;
+  --text-heading-2-light--letter-spacing: -2%;
   --text-heading-2-light--font-weight: Light;
 
   --text-heading-3-regular: 32px;
   --text-heading-3-regular--line-height: 1.2000000476837158;
-  --text-heading-3-regular--letter-spacing: -2em;
+  --text-heading-3-regular--letter-spacing: -2%;
   --text-heading-3-regular--font-weight: Regular;
 
   --text-heading-3-medium: 32px;
   --text-heading-3-medium--line-height: 1.2000000476837158;
-  --text-heading-3-medium--letter-spacing: -2em;
+  --text-heading-3-medium--letter-spacing: -2%;
   --text-heading-3-medium--font-weight: Medium;
 
   --text-heading-3-bold: 32px;
   --text-heading-3-bold--line-height: 1.2000000476837158;
-  --text-heading-3-bold--letter-spacing: -2em;
+  --text-heading-3-bold--letter-spacing: -2%;
   --text-heading-3-bold--font-weight: Bold;
 
   --text-heading-3-light: 32px;
   --text-heading-3-light--line-height: normal;
-  --text-heading-3-light--letter-spacing: -2em;
+  --text-heading-3-light--letter-spacing: -2%;
   --text-heading-3-light--font-weight: Light;
 
   --text-heading-4-regular: 28px;
   --text-heading-4-regular--line-height: 1.2000000476837158;
-  --text-heading-4-regular--letter-spacing: -2em;
+  --text-heading-4-regular--letter-spacing: -2%;
   --text-heading-4-regular--font-weight: Regular;
 
   --text-heading-4-medium: 28px;
   --text-heading-4-medium--line-height: 1.2000000476837158;
-  --text-heading-4-medium--letter-spacing: -2em;
+  --text-heading-4-medium--letter-spacing: -2%;
   --text-heading-4-medium--font-weight: Medium;
 
   --text-heading-4-bold: 28px;
   --text-heading-4-bold--line-height: 1.2000000476837158;
-  --text-heading-4-bold--letter-spacing: -2em;
+  --text-heading-4-bold--letter-spacing: -2%;
   --text-heading-4-bold--font-weight: Bold;
 
   --text-heading-4-light: 28px;
   --text-heading-4-light--line-height: 1.2000000476837158;
-  --text-heading-4-light--letter-spacing: -2em;
+  --text-heading-4-light--letter-spacing: -2%;
   --text-heading-4-light--font-weight: Light;
 
   --text-heading-5-regular: 24px;
   --text-heading-5-regular--line-height: 1.2000000476837158;
-  --text-heading-5-regular--letter-spacing: -2em;
+  --text-heading-5-regular--letter-spacing: -2%;
   --text-heading-5-regular--font-weight: Regular;
 
   --text-heading-5-medium: 24px;
   --text-heading-5-medium--line-height: 1.2000000476837158;
-  --text-heading-5-medium--letter-spacing: -2em;
+  --text-heading-5-medium--letter-spacing: -2%;
   --text-heading-5-medium--font-weight: Medium;
 
   --text-heading-5-bold: 24px;
   --text-heading-5-bold--line-height: 1.2000000476837158;
-  --text-heading-5-bold--letter-spacing: -2em;
+  --text-heading-5-bold--letter-spacing: -2%;
   --text-heading-5-bold--font-weight: Bold;
 
   --text-heading-5-light: 24px;
   --text-heading-5-light--line-height: 1.2000000476837158;
-  --text-heading-5-light--letter-spacing: -2em;
+  --text-heading-5-light--letter-spacing: -2%;
   --text-heading-5-light--font-weight: Light;
 
   --text-heading-6-regular: 20px;
   --text-heading-6-regular--line-height: 1.2000000476837158;
-  --text-heading-6-regular--letter-spacing: -2em;
+  --text-heading-6-regular--letter-spacing: -2%;
   --text-heading-6-regular--font-weight: Regular;
 
   --text-heading-6-medium: 20px;
   --text-heading-6-medium--line-height: 1.2000000476837158;
-  --text-heading-6-medium--letter-spacing: -2em;
+  --text-heading-6-medium--letter-spacing: -2%;
   --text-heading-6-medium--font-weight: Medium;
 
   --text-heading-6-bold: 20px;
   --text-heading-6-bold--line-height: 1.2000000476837158;
-  --text-heading-6-bold--letter-spacing: -2em;
+  --text-heading-6-bold--letter-spacing: -2%;
   --text-heading-6-bold--font-weight: Bold;
 
   --text-heading-6-light: 20px;
   --text-heading-6-light--line-height: 1.2000000476837158;
-  --text-heading-6-light--letter-spacing: -2em;
+  --text-heading-6-light--letter-spacing: -2%;
   --text-heading-6-light--font-weight: Light;
 
   --text-body-1-regular: 18px;
   --text-body-1-regular--line-height: 1.399999976158142;
-  --text-body-1-regular--letter-spacing: -2em;
+  --text-body-1-regular--letter-spacing: -2%;
   --text-body-1-regular--font-weight: Regular;
 
   --text-body-1-medium: 18px;
   --text-body-1-medium--line-height: 1.399999976158142;
-  --text-body-1-medium--letter-spacing: -2em;
+  --text-body-1-medium--letter-spacing: -2%;
   --text-body-1-medium--font-weight: Medium;
 
   --text-body-1-bold: 18px;
   --text-body-1-bold--line-height: 1.399999976158142;
-  --text-body-1-bold--letter-spacing: -2em;
+  --text-body-1-bold--letter-spacing: -2%;
   --text-body-1-bold--font-weight: Bold;
 
   --text-body-1-light: 18px;
   --text-body-1-light--line-height: 1.399999976158142;
-  --text-body-1-light--letter-spacing: -2em;
+  --text-body-1-light--letter-spacing: -2%;
   --text-body-1-light--font-weight: Light;
 
   --text-body-2-regular: 16px;
   --text-body-2-regular--line-height: 1.399999976158142;
-  --text-body-2-regular--letter-spacing: -2em;
+  --text-body-2-regular--letter-spacing: -2%;
   --text-body-2-regular--font-weight: Regular;
 
   --text-body-2-medium: 16px;
   --text-body-2-medium--line-height: 1.399999976158142;
-  --text-body-2-medium--letter-spacing: -2em;
+  --text-body-2-medium--letter-spacing: -2%;
   --text-body-2-medium--font-weight: Medium;
 
   --text-body-2-bold: 16px;
   --text-body-2-bold--line-height: 1.399999976158142;
-  --text-body-2-bold--letter-spacing: -2em;
+  --text-body-2-bold--letter-spacing: -2%;
   --text-body-2-bold--font-weight: Bold;
 
   --text-body-2-light: 16px;
   --text-body-2-light--line-height: normal;
-  --text-body-2-light--letter-spacing: -2em;
+  --text-body-2-light--letter-spacing: -2%;
   --text-body-2-light--font-weight: Light;
 
   --text-caption-1-regular: 14px;
   --text-caption-1-regular--line-height: 1.399999976158142;
-  --text-caption-1-regular--letter-spacing: -2em;
+  --text-caption-1-regular--letter-spacing: -2%;
   --text-caption-1-regular--font-weight: Regular;
 
   --text-caption-1-medium: 14px;
   --text-caption-1-medium--line-height: 1.399999976158142;
-  --text-caption-1-medium--letter-spacing: -2em;
+  --text-caption-1-medium--letter-spacing: -2%;
   --text-caption-1-medium--font-weight: Medium;
 
   --text-caption-1-bold: 14px;
   --text-caption-1-bold--line-height: 1.399999976158142;
-  --text-caption-1-bold--letter-spacing: -2em;
+  --text-caption-1-bold--letter-spacing: -2%;
   --text-caption-1-bold--font-weight: Bold;
 
   --text-caption-1-light: 14px;
   --text-caption-1-light--line-height: 1.2000000476837158;
-  --text-caption-1-light--letter-spacing: -2em;
+  --text-caption-1-light--letter-spacing: -2%;
   --text-caption-1-light--font-weight: Light;
 
   --text-caption-2-regular: 12px;
