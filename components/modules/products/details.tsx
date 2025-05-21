@@ -29,7 +29,7 @@ const ProductDetailCard = () => {
         </button>
       </div>
 
-      <button className="p-4 bg-white rounded-full text-black text-body-1-bold flex items-center justify-center gap-4 cursor-pointer">
+      <button className="p-4 bg-white shadow-[inset_0px_-4px_1px_0px_rgba(13,13,13,0.22)] outline-[0.50px] outline-offset-[-0.50px] outline-zinc-800 rounded-full text-black text-body-1-bold flex items-center justify-center gap-4 cursor-pointer">
         Preview
         <span className="bg-black text-white size-8 aspect-square flex items-center justify-center rounded-full">
           <ChevronDoubleDownIcon className="size-4 text-white" />
