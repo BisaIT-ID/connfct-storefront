@@ -1,10 +1,13 @@
+"use client";
+import downloadImage from "app/utils/download-image";
+
 const ProductImages = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="relative flex justify-center items-center size-[632px] bg-[#292929] rounded-4xl">
         <img src="/home/ring.png" alt="" className="size-[450px]" />
-        <div className="flex gap-3 absolute bottom-5 right-5">
-          <button>
+        <div className="flex gap-3 absolute bottom-5 right-5 *:cursor-pointer">
+          <button onClick={() => downloadImage("/home/ring.png")}>
             <img src="/products/download.svg" alt="" />
             <span className="sr-only">Download</span>
           </button>
