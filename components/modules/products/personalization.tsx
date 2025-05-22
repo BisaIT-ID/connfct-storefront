@@ -1,15 +1,46 @@
 "use client";
-import { ChangeEvent, useRef, useState } from "react";
+import {
+  getPersonalizationData,
+  hasPersonalizationData,
+  storePersonalizationData,
+} from "app/utils/personalization";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
-const Personalization = () => {
+interface PersonalizationProps {
+  productId?: string;
+}
+
+const Personalization = ({ productId = "default" }: PersonalizationProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [logoName, setLogoName] = useState<string>("");
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [logoFile, setLogoFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropAreaRef = useRef<HTMLDivElement>(null);
 
-  const processFile = (file: File) => {
+  // Check for existing personalization data on component mount
+  useEffect(() => {
+    const loadPersonalizationData = async () => {
+      try {
+        const hasData = await hasPersonalizationData(productId);
+        if (hasData) {
+          const data = await getPersonalizationData(productId);
+          if (data) {
+            setSelectedImage(data.previewUrl || null);
+            setLogoName(data.logoName);
+            setLogoFile(data.logoFile);
+          }
+        }
+      } catch (err) {
+        console.error("Error loading personalization data:", err);
+      }
+    };
+
+    loadPersonalizationData();
+  }, [productId]);
+
+  const processFile = async (file: File) => {
     setError(null);
 
     // Check file type
@@ -35,9 +66,16 @@ const Personalization = () => {
     // Create object URL for preview
     const objectUrl = URL.createObjectURL(file);
     setSelectedImage(objectUrl);
+    setLogoFile(file);
 
-    // Clean up the URL when component unmounts
-    return () => URL.revokeObjectURL(objectUrl);
+    // Store in IndexedDB
+    try {
+      // Store the data using our utility function
+      await storePersonalizationData(productId, file, logoName);
+    } catch (err) {
+      console.error("Error storing personalization data:", err);
+      setError("Error storing your logo. Please try again.");
+    }
   };
 
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -180,8 +218,18 @@ const Personalization = () => {
           Cancel
         </button>
         <button
-          disabled={logoName?.trim() === ""}
+          disabled={logoName?.trim() === "" || !logoFile}
           className="p-4 bg-white disabled:opacity-50 shadow-[inset_0px_-4px_1px_0px_rgba(13,13,13,0.22)] outline-[0.50px] outline-offset-[-0.50px] outline-zinc-800 rounded-full text-black text-body-1-bold flex items-center justify-center gap-4 cursor-pointer"
+          onClick={async () => {
+            if (logoFile && logoName.trim() !== "") {
+              // Save final version with updated logo name
+              await storePersonalizationData(productId, logoFile, logoName);
+              console.log(
+                `Personalization data stored for product: ${productId}`
+              );
+              // Here you would typically navigate to cart or next step
+            }
+          }}
         >
           Add
         </button>
