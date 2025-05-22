@@ -4,6 +4,7 @@ import {
   hasPersonalizationData,
   storePersonalizationData,
 } from "app/utils/personalization";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 interface PersonalizationProps {
@@ -18,6 +19,7 @@ const Personalization = ({ productId = "default" }: PersonalizationProps) => {
   const [logoFile, setLogoFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropAreaRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   // Check for existing personalization data on component mount
   useEffect(() => {
@@ -214,7 +216,10 @@ const Personalization = ({ productId = "default" }: PersonalizationProps) => {
       </div>
 
       <div className="flex gap-2.5 *:w-full">
-        <button className="p-4 text-white border border-primary-700 rounded-full text-body-1-bold flex items-center justify-center gap-4 cursor-pointer">
+        <button
+          onClick={() => router.back()}
+          className="p-4 text-white border border-primary-700 rounded-full text-body-1-bold flex items-center justify-center gap-4 cursor-pointer"
+        >
           Cancel
         </button>
         <button
@@ -228,6 +233,7 @@ const Personalization = ({ productId = "default" }: PersonalizationProps) => {
                 `Personalization data stored for product: ${productId}`
               );
               // Here you would typically navigate to cart or next step
+              router.push(`/product/${productId}`);
             }
           }}
         >
